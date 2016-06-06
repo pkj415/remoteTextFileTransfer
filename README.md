@@ -1,0 +1,13 @@
+# remoteTextFileTransfer
+A program in C to cater to text file requests by clients on a LAN
+
+All the files are present in the same folder namely - {file1,file2,file3 .... file10}.
+To run the server, run command - ./server <port number> 
+eg :- ./server 8080 (for port 8080).
+
+To query the server , run client code - ./client <server address> <filename> <port number>
+eg:- ./client 127.0.0.1 file3 8080.
+
+All the clients connecting to port 8080 are redirected to ports starting from 8080 to 8081,8082,8083 .
+
+Server everytime tries to reconnect 3 times after a timeout of 2s if it fails to acknowledge from the client.
